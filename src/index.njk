@@ -1,0 +1,19 @@
+---
+title: Sample 11ty
+post: collections.post {# getting the post tagged in the .md files #}
+---
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8">
+  <title>{{ title }}</title>
+ </head>
+ <body>
+ 	<h1>{{ title }}</h1>
+  <ul>
+    {%- for post in collections.post -%}
+      <li>{{ post.data.title }}</li>
+    {%- endfor -%}
+  </ul>
+ </body>
+</html>
