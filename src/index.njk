@@ -18,15 +18,18 @@ title: Sample 11ty - Animals
   <div class="container">
     {%- for animal in animals -%}
       <div class="animal">
-        <span>
-          Name: {{ animal.name }}
-        </span>
-        <span>
-          Country: {{ animal.country }}
-        </span>
-        <span>
-          Description: {{ animal.description }}
-        </span>
+        <div class="animal__text">
+          <strong class="label">Name:</strong>
+          {{ animal.name }}
+        </div>
+        <div class="animal__text">
+          <strong class="label">Country:</strong>
+          {{ animal.country }}
+        </div>
+        <div class="animal__text">
+          <strong class="label">Description:</strong>
+          {{ animal.description }}
+        </div>
       </div>
     {%- endfor -%}
   </div>
