@@ -1,16 +1,15 @@
 ---
-title: Sample 11ty - Animals
-lang: es
+lang: en
 ---
 <!doctype html>
 <html lang={{ lang }}>
  <head>
   <meta charset="utf-8">
-  <title>{{ title }}</title>
+  <title>{{ collections[lang][0].data.title }}</title>
   <link rel="stylesheet" href="/css/main.css">
  </head>
  <body>
- 	<h1>{{ title }}</h1>
+ 	<h1>{{ collections[lang][0].data.title }}</h1>
   <div class="container">
     {%- for animal in animals -%}
       <div class="animal">
