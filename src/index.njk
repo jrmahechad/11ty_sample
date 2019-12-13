@@ -3,26 +3,27 @@ lang: en
 ---
 <!doctype html>
 <html lang={{ lang }}>
+  {% set page = collections | i18n(lang) %}
  <head>
   <meta charset="utf-8">
-  <title>{{ collections[lang][0].data.title }}</title>
+  <title>{{  page.title }}</title>
   <link rel="stylesheet" href="/css/main.css">
  </head>
  <body>
- 	<h1>{{ collections[lang][0].data.title }}</h1>
+ 	<h1>{{ page.title }}</h1>
   <div class="container">
     {%- for animal in animals -%}
       <div class="animal">
         <div class="animal__text">
-          <strong class="label">{{collections[lang][0].data.name}}:</strong>
+          <strong class="label">{{page.name}}:</strong>
           {{ animal.name }}
         </div>
         <div class="animal__text">
-          <strong class="label">{{collections[lang][0].data.country}}:</strong>
+          <strong class="label">{{page.country}}:</strong>
           {{ animal.country }}
         </div>
         <div class="animal__text">
-          <strong class="label">{{collections[lang][0].data.description}}:</strong>
+          <strong class="label">{{page.description}}:</strong>
           {{ animal.description }}
         </div>
       </div>
