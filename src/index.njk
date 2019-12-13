@@ -10,11 +10,6 @@ title: Sample 11ty - Animals
  </head>
  <body>
  	<h1>{{ title }}</h1>
-  <ul>
-    {%- for post in collections.post -%}
-      <li>{{ post.data.title }}</li>
-    {%- endfor -%}
-  </ul>
   <div class="container">
     {%- for animal in animals -%}
       <div class="animal">
