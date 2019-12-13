@@ -1,8 +1,9 @@
 ---
 title: Sample 11ty - Animals
+lang: es
 ---
 <!doctype html>
-<html lang="en">
+<html lang={{ lang }}>
  <head>
   <meta charset="utf-8">
   <title>{{ title }}</title>
@@ -14,15 +15,15 @@ title: Sample 11ty - Animals
     {%- for animal in animals -%}
       <div class="animal">
         <div class="animal__text">
-          <strong class="label">Name:</strong>
+          <strong class="label">{{collections[lang][0].data.name}}:</strong>
           {{ animal.name }}
         </div>
         <div class="animal__text">
-          <strong class="label">Country:</strong>
+          <strong class="label">{{collections[lang][0].data.country}}:</strong>
           {{ animal.country }}
         </div>
         <div class="animal__text">
-          <strong class="label">Description:</strong>
+          <strong class="label">{{collections[lang][0].data.description}}:</strong>
           {{ animal.description }}
         </div>
       </div>
