@@ -7,6 +7,7 @@ post: collections.post {# getting the post tagged in the .md files #}
  <head>
   <meta charset="utf-8">
   <title>{{ title }}</title>
+  <link rel="stylesheet" href="/css/main.css">
  </head>
  <body>
  	<h1>{{ title }}</h1>
@@ -15,5 +16,20 @@ post: collections.post {# getting the post tagged in the .md files #}
       <li>{{ post.data.title }}</li>
     {%- endfor -%}
   </ul>
+  <div class="container">
+    {%- for animal in animals -%}
+      <div class="animal">
+        <span>
+          Name: {{ animal.name }}
+        </span>
+        <span>
+          Country: {{ animal.country }}
+        </span>
+        <span>
+          Description: {{ animal.description }}
+        </span>
+      </div>
+    {%- endfor -%}
+  </div>
  </body>
 </html>
