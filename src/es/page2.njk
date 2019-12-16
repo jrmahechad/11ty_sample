@@ -1,10 +1,9 @@
 ---
-lang: en
+lang: es
 layout: layouts/base.njk
 ---
 {{components}}
 {% import "../_includes/layouts/component-factory.njk" as factory with context %}
-
-{% set components = pages.index %}
+{% set components = pages.page2 %}
 
 {{factory.render_components(components)}}

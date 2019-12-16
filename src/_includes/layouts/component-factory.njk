@@ -27,8 +27,8 @@
 #}
 {% macro render_components(components) %}
   {%- for component in components -%}
-  <p>{{component.name}}<p>
-  {{render_component(component)}}
+    <p>{{component.name}}<p>
+    {{render_component(component)}}
   {%- endfor -%}
 {% endmacro %}
 

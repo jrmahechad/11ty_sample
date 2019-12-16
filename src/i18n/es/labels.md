@@ -1,5 +1,4 @@
 ---
-key: es
 name: Mi nombre es Julian
 country: Pais
 description: Descripción
