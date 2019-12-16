@@ -1,0 +1,34 @@
+{# Renders a component.
+
+  @param {!Object} component Component's data to render it.
+    @param {!Object} config Data used to determine how to render the
+        component.
+    @param {!Object} data Data used inside the component.
+#}
+{% macro render_component(component) %}
+  component: {{component | json}}
+  {% set config = component.config or {} %}
+  {% set template_name = component.name or 'not-found/default ' %}
+  {% set template = '../components/' ~ template_name ~ '.njk' %}
+
+  {% set data = collections | i18n(lang, component.data) %}
+
+  {% import template as component_template with context %}
+
+  {{component_template.render(data)}}
+{% endmacro %}
+
+{# Renders a component.
+
+  @param {!Object} component Component's data to render it.
+    @param {!Object} config Data used to determine how to render the
+        component.
+    @param {!Object} data Data used inside the component.
+#}
+{% macro render_components(components) %}
+  {%- for component in components -%}
+  <p>{{component.name}}<p>
+  {{render_component(component)}}
+  {%- endfor -%}
+{% endmacro %}
+

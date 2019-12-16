@@ -1,0 +1,8 @@
+---
+lang: en
+layout: layouts/base.njk
+---
+{{components}}
+{% import "../_includes/layouts/component-factory.njk" as factory with context %}
+
+{{factory.render_components(components)}}

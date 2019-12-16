@@ -1,0 +1,26 @@
+{# Renders the animals component xs#}
+{% macro render(data) %}
+  <section>
+    <h2>{{ page.title }}</h2>
+    <p>This component is using data from the collection 'animals'</p>
+    <p>Available for all the site</p>
+    <div class="container">
+      {%- for animal in animals -%}
+        <div class="animal">
+          <div class="animal__text">
+            <strong class="label">Name:</strong>
+            {{ animal.name }}
+          </div>
+          <div class="animal__text">
+            <strong class="label">Country:</strong>
+            {{ animal.country }}
+          </div>
+          <div class="animal__text">
+            <strong class="label">Description:</strong>
+            {{ animal.description }}
+          </div>
+        </div>
+      {%- endfor -%}
+    </div>
+  </section>
+{% endmacro %}

@@ -1,0 +1,9 @@
+{# Renders the hello-world component #}
+{% macro render(data) %}
+  <section>
+    <h2>This is the Hello Wold Component</h2>
+    <h3>Hello from 11ty</h3>
+    <p>This component is using localized data under 'i18n' folder<p>
+    <p>{{data.name}}</p>
+  </section>
+{% endmacro %}

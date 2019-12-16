@@ -1,5 +1,15 @@
 module.exports = (function (eleventyConfig) {
-  eleventyConfig.addNunjucksFilter("i18n", (array, lang) => array[lang][0].data);
+  eleventyConfig.addNunjucksFilter("i18n", (array, lang, dataName) => {
+    const defaultLang = 'en';
+    const langData = array[lang] || array [defaultLang] || [];
+    const dataByName =  langData.filter((item) => {
+      return item.filePathStem === `/i18n/${lang}/${dataName}`;
+    }).map((item) => item.data);
+
+    return dataByName[0];
+  });
+
+  eleventyConfig.addNunjucksFilter("json", (data) => JSON.stringify(data));
 
   return {
     dir: { input: 'src', output: 'dist', data: '_data' },
