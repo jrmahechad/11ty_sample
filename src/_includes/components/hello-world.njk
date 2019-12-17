@@ -1,8 +1,8 @@
 {# Renders the hello-world component #}
 {% macro render(data) %}
   <section>
-    <h2>This is the Hello Wold Component</h2>
-    <h3>Hello from 11ty</h3>
+    {% heading2 'This is the Hello Wold Component' %}
+    {% heading3 'Hello from 11ty' %}
     <p>This component is using localized data under 'i18n' folder<p>
     <p>This data should be localized: {{data.name}}</p>
   </section>

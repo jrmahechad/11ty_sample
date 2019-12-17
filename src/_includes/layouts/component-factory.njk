@@ -10,7 +10,7 @@
   {% set template_name = component.name or 'not-found/default' %}
   {% set template = '../components/' ~ template_name ~ '.njk' %}
 
-  {% set data = collections | i18n(lang, component.data) %}
+  {% set data = collections | getDataI18n(lang, component.data) %}
 
   {% import template as component_template with context %}
 
