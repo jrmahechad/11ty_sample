@@ -3,7 +3,7 @@ module.exports = (function (eleventyConfig) {
     const defaultLang = 'en';
     const langData = array[lang] || array [defaultLang] || [];
     const dataByName =  langData.filter((item) => {
-      return item.filePathStem === `/i18n/${lang}/${dataName}`;
+      return item.filePathStem === `/i18n/${lang}/content/${dataName}`;
     }).map((item) => item.data);
 
     return dataByName[0];

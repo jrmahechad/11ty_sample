@@ -6,9 +6,8 @@
     @param {!Object} data Data used inside the component.
 #}
 {% macro render_component(component) %}
-  component: {{component | json}}
   {% set config = component.config or {} %}
-  {% set template_name = component.name or 'not-found/default ' %}
+  {% set template_name = component.name or 'not-found/default' %}
   {% set template = '../components/' ~ template_name ~ '.njk' %}
 
   {% set data = collections | i18n(lang, component.data) %}
