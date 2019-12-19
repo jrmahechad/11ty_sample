@@ -1,9 +1,14 @@
+const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 const shortcodes = require('./eleventy-tools/shortcodes/shortcodes');
 const filters = require('./eleventy-tools/filters/filters');
 
 module.exports = (function (eleventyConfig) {
-  eleventyConfig.addNunjucksFilter("getDataI18n", filters.getDataFromLocale);
+  eleventyConfig.addPlugin(syntaxHighlight, {
+    templateFormats: ["njk", "md"]
+  });
 
+  eleventyConfig.addNunjucksFilter("getDataI18n", filters.getDataFromLocale);
+  eleventyConfig.addNunjucksFilter("loadSnippet", filters.loadSnippet);
   eleventyConfig.addNunjucksFilter("json", filters.toJson);
 
   eleventyConfig.addNunjucksShortcode("heading1", shortcodes.createH1);

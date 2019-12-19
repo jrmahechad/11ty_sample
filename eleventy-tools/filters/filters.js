@@ -1,6 +1,7 @@
-const { toJson, getDataFromLocale }  = require('./utils');
+const { toJson, getDataFromLocale, loadSnippet  }  = require('./utils');
 
 module.exports = {
   toJson,
-  getDataFromLocale
+  getDataFromLocale,
+  loadSnippet
 };
