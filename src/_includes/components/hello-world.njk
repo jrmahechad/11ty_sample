@@ -1,3 +1,5 @@
+
+
 {# Renders the hello-world component #}
 {% macro render(data) %}
   <section>
@@ -5,5 +7,22 @@
     {% heading3 'Hello from 11ty' %}
     <p>This component is using localized data under 'i18n' folder<p>
     <p>This data should be localized: {{data.name}}</p>
+
+
+    {% highlight "js" %}
+    function myFunction() {
+      return true;
+    }
+    {% endhighlight %}
+
+    {% if data.snippet %}
+      {{data.snippet | json}}
+      {{collections.snippets | loadSnippet(data.snippet.code)}}
+
+      {% highlight data.snippet.lang %}
+        {{collections.snippets | loadSnippet(data.snippet.code)}}
+      {% endhighlight %}
+
+    {% endif%}
   </section>
 {% endmacro %}
